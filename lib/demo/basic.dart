@@ -11,8 +11,10 @@ class Basic extends StatelessWidget {
           alignment: Alignment.topCenter,
           // repeat: ImageRepeat.repeat,
           fit: BoxFit.cover,
-          colorFilter:
-              ColorFilter.mode(Colors.indigoAccent[400], BlendMode.hardLight),
+          colorFilter: ColorFilter.mode(
+            Colors.indigoAccent[400],
+            BlendMode.hardLight,
+          ),
         ),
       ),
       child: Row(
