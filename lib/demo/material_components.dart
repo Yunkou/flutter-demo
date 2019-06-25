@@ -41,12 +41,7 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Theme(
-                  data: Theme.of(context).copyWith(
-                    buttonTheme: ButtonThemeData(
-                      shape: StadiumBorder(),
-                    ),
-                  ),
+                Expanded(
                   child: OutlineButton(
                     child: Text('Button'),
                     onPressed: () {},
@@ -58,8 +53,8 @@ class ButtonDemo extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 16.0),
-                Container(
-                  width: 120.0,
+                Expanded(
+                  flex: 2,
                   child: OutlineButton.icon(
                     icon: Icon(Icons.add),
                     label: Text('Button'),
