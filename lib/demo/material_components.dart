@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import './popup_menu_button_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -18,7 +19,11 @@ class MaterialComponents extends StatelessWidget {
           ListItem(
             titile: 'Button',
             page: ButtonDemo(),
-          )
+          ),
+          ListItem(
+            titile: 'PopupMenuButton',
+            page: PopupMenuButtonDemo(),
+          ),
         ],
       ),
     );
@@ -28,6 +33,72 @@ class MaterialComponents extends StatelessWidget {
 class ButtonDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Widget expandedButton = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Expanded(
+          child: OutlineButton(
+            child: Text('Button'),
+            onPressed: () {},
+            splashColor: Colors.grey,
+            textColor: Theme.of(context).accentColor,
+            borderSide: BorderSide(
+              color: Colors.grey,
+            ),
+          ),
+        ),
+        SizedBox(width: 16.0),
+        Expanded(
+          flex: 2,
+          child: OutlineButton.icon(
+            icon: Icon(Icons.add),
+            label: Text('Button'),
+            onPressed: () {},
+            splashColor: Colors.grey,
+            borderSide: BorderSide(
+              color: Colors.grey,
+            ),
+            textColor: Theme.of(context).accentColor,
+          ),
+        ),
+      ],
+    );
+
+    final Widget buttonBarButton = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Theme(
+          data: Theme.of(context).copyWith(
+            buttonTheme: ButtonThemeData(
+              padding: EdgeInsets.symmetric(horizontal: 32.0),
+            ),
+          ),
+          child: ButtonBar(
+            children: <Widget>[
+              OutlineButton(
+                child: Text('Button'),
+                onPressed: () {},
+                splashColor: Colors.grey,
+                textColor: Theme.of(context).accentColor,
+                borderSide: BorderSide(
+                  color: Colors.grey,
+                ),
+              ),
+              OutlineButton(
+                child: Text('Button'),
+                onPressed: () {},
+                splashColor: Colors.grey,
+                textColor: Theme.of(context).accentColor,
+                borderSide: BorderSide(
+                  color: Colors.grey,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text('ButtonDemo'),
@@ -38,36 +109,8 @@ class ButtonDemo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                  child: OutlineButton(
-                    child: Text('Button'),
-                    onPressed: () {},
-                    splashColor: Colors.grey,
-                    textColor: Theme.of(context).accentColor,
-                    borderSide: BorderSide(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 16.0),
-                Expanded(
-                  flex: 2,
-                  child: OutlineButton.icon(
-                    icon: Icon(Icons.add),
-                    label: Text('Button'),
-                    onPressed: () {},
-                    splashColor: Colors.grey,
-                    borderSide: BorderSide(
-                      color: Colors.grey,
-                    ),
-                    textColor: Theme.of(context).accentColor,
-                  ),
-                ),
-              ],
-            )
+            expandedButton,
+            buttonBarButton,
           ],
         ),
       ),
