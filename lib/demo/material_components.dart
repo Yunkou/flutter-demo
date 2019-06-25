@@ -42,26 +42,29 @@ class ButtonDemo extends StatelessWidget {
               children: <Widget>[
                 Theme(
                   data: Theme.of(context).copyWith(
-                    buttonColor: Theme.of(context).accentColor,
                     buttonTheme: ButtonThemeData(
-                      textTheme: ButtonTextTheme.primary,
                       shape: StadiumBorder(),
                     ),
                   ),
-                  child: RaisedButton(
+                  child: OutlineButton(
                     child: Text('Button'),
                     onPressed: () {},
                     splashColor: Colors.grey,
-                    elevation: 12.0,
+                    textColor: Theme.of(context).accentColor,
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
                   ),
                 ),
                 SizedBox(width: 16.0),
-                RaisedButton.icon(
+                OutlineButton.icon(
                   icon: Icon(Icons.add),
                   label: Text('Button'),
                   onPressed: () {},
-                  elevation: 12.0,
                   splashColor: Colors.grey,
+                  borderSide: BorderSide(
+                    color: Colors.grey,
+                  ),
                   textColor: Theme.of(context).accentColor,
                 )
               ],
