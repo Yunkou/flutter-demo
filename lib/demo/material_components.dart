@@ -13,8 +13,50 @@ class MaterialComponents extends StatelessWidget {
           ListItem(
             titile: 'FloatingActionButton',
             page: FloatingActionButtonDemo(),
+          ),
+          ListItem(
+            titile: 'Button',
+            page: ButtonDemo(),
           )
         ],
+      ),
+    );
+  }
+}
+
+class ButtonDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ButtonDemo'),
+        elevation: 0.0,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                FlatButton(
+                  child: Text('Button'),
+                  onPressed: () {},
+                  splashColor: Colors.grey,
+                  textColor: Theme.of(context).accentColor,
+                ),
+                FlatButton.icon(
+                  icon: Icon(Icons.add),
+                  label: Text('Button'),
+                  onPressed: () {},
+                  splashColor: Colors.grey,
+                  textColor: Theme.of(context).accentColor,
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
