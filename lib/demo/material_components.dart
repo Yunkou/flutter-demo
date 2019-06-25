@@ -40,12 +40,20 @@ class ButtonDemo extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
-                  child: Text('Button'),
-                  onPressed: () {},
-                  splashColor: Colors.grey,
-                  elevation: 12.0,
-                  textColor: Theme.of(context).accentColor,
+                Theme(
+                  data: Theme.of(context).copyWith(
+                    buttonColor: Theme.of(context).accentColor,
+                    buttonTheme: ButtonThemeData(
+                      textTheme: ButtonTextTheme.primary,
+                      shape: StadiumBorder(),
+                    ),
+                  ),
+                  child: RaisedButton(
+                    child: Text('Button'),
+                    onPressed: () {},
+                    splashColor: Colors.grey,
+                    elevation: 12.0,
+                  ),
                 ),
                 SizedBox(width: 16.0),
                 RaisedButton.icon(
