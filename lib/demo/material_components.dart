@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -57,16 +58,19 @@ class ButtonDemo extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 16.0),
-                OutlineButton.icon(
-                  icon: Icon(Icons.add),
-                  label: Text('Button'),
-                  onPressed: () {},
-                  splashColor: Colors.grey,
-                  borderSide: BorderSide(
-                    color: Colors.grey,
+                Container(
+                  width: 120.0,
+                  child: OutlineButton.icon(
+                    icon: Icon(Icons.add),
+                    label: Text('Button'),
+                    onPressed: () {},
+                    splashColor: Colors.grey,
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
+                    textColor: Theme.of(context).accentColor,
                   ),
-                  textColor: Theme.of(context).accentColor,
-                )
+                ),
               ],
             )
           ],
