@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hello_world/demo/expansion_panel_dem.dart';
 import './popup_menu_button_demo.dart';
 import './form_demo.dart';
 import './checkbox_demo.dart';
@@ -11,6 +12,7 @@ import './simple_dialog_demo.dart';
 import './alert_dialog_demo.dart';
 import './bottom_sheet_demo.dart';
 import './snack_bar_demo.dart';
+import './expansion_panel_dem.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -73,6 +75,10 @@ class MaterialComponents extends StatelessWidget {
           ListItem(
             titile: 'SnackBar',
             page: SnackBarDemo(),
+          ),
+          ListItem(
+            titile: 'ExpansionPanel',
+            page: ExpansionPanelDemo(),
           ),
         ],
       ),
