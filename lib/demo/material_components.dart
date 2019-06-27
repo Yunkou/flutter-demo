@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import './popup_menu_button_demo.dart';
+import './form_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -23,6 +24,10 @@ class MaterialComponents extends StatelessWidget {
           ListItem(
             titile: 'PopupMenuButton',
             page: PopupMenuButtonDemo(),
+          ),
+          ListItem(
+            titile: 'Form',
+            page: FormDemo(),
           ),
         ],
       ),
