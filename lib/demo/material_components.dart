@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import './popup_menu_button_demo.dart';
 import './form_demo.dart';
 import './checkbox_demo.dart';
+import './radio_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
@@ -33,6 +34,10 @@ class MaterialComponents extends StatelessWidget {
           ListItem(
             titile: 'Checkbox',
             page: CheckboxDemo(),
+          ),
+          ListItem(
+            titile: 'Radio',
+            page: RadionDemo(),
           ),
         ],
       ),
