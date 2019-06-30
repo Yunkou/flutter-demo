@@ -23,30 +23,34 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
   @override
   void initState() {
     super.initState();
+
     _expansionPanelItems = <ExpansionPanelItem>[
       ExpansionPanelItem(
         headerText: 'Panel A',
         body: Container(
           padding: EdgeInsets.all(16.0),
           width: double.infinity,
-          child: Text('Content for Panel A'),
+          child: Text('Content for Panel A.'),
         ),
+        isExpanded: false,
       ),
       ExpansionPanelItem(
         headerText: 'Panel B',
         body: Container(
           padding: EdgeInsets.all(16.0),
           width: double.infinity,
-          child: Text('Content for Panel B'),
+          child: Text('Content for Panel B.'),
         ),
+        isExpanded: false,
       ),
       ExpansionPanelItem(
         headerText: 'Panel C',
         body: Container(
           padding: EdgeInsets.all(16.0),
           width: double.infinity,
-          child: Text('Content for Panel C'),
+          child: Text('Content for Panel C.'),
         ),
+        isExpanded: false,
       ),
     ];
   }
@@ -55,7 +59,7 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SnackBarDemo'),
+        title: Text('ExpansionPanelDemo'),
         elevation: 0.0,
       ),
       body: Container(
@@ -83,8 +87,8 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
                     );
                   },
                 );
-              }),
-            )
+              }).toList(),
+            ),
           ],
         ),
       ),
